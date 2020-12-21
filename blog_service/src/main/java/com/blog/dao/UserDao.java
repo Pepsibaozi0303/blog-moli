@@ -13,4 +13,8 @@ public interface UserDao extends Mapper<User> {
 
     @Select("SELECT * FROM USER WHERE user_name = #{userName} AND user_password = #{passWord}")
     User login(@Param("userName") String userName, @Param("passWord") String passWord);
+
+
+    @Select("SELECT user_id FROM USER WHERE user_name = #{userName}")
+    String selectByUserName(String userName);
 }

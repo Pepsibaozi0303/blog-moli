@@ -12,5 +12,6 @@ public interface UserService {
 
     void register(User user);
 
+    String selectByUserName(String userName);
 
 }

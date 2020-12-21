@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+
     @Override
     public User login(String userName, String passWord) {
         return userDao.login(userName, passWord);
@@ -22,5 +23,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(User user) {
 
+    }
+
+    @Override
+    public String selectByUserName(String userName) {
+        String userId = userDao.selectByUserName(userName);
+        return userId;
     }
 }

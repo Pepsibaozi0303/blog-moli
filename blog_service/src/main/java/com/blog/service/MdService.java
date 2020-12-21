@@ -7,8 +7,9 @@ import org.springframework.web.multipart.MultipartFile;
  * @Date: 2020/12/21
  */
 public interface MdService {
+
     //导入
-    void upload(MultipartFile file);
+    void upload(MultipartFile file,String username);
 
     //导出
     void download();

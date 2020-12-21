@@ -17,7 +17,7 @@ import java.util.Map;
 public class Md2xParseUtil {
     private static Map<String, List<String>> mdStr;
 
-    public static Map parse(String fileName) {
+    public static Map<String, List<String>> parse(String fileName) {
         String mdInfo = getStr(fileName);
 
         // 创建解析器对象

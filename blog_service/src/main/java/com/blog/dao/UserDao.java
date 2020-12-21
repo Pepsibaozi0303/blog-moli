@@ -11,6 +11,6 @@ import tk.mybatis.mapper.common.Mapper;
  */
 public interface UserDao extends Mapper<User> {
 
-    @Select("SELECT * FROM USER WHERE user_name = #{userName} AND pass_word = #{passWord}")
+    @Select("SELECT * FROM USER WHERE user_name = #{userName} AND user_password = #{passWord}")
     User login(@Param("userName") String userName, @Param("passWord") String passWord);
 }

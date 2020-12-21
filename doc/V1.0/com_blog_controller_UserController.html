@@ -63,8 +63,7 @@
 <h2 id="login"><a href="#">登录 </a></h2>
 <p><strong>请求URL</strong></p>
 <p>
-    <code>/user/login</code>
-        <span class="label label-default">GET</span>
+    <code>/user/login/{username}/{password}</code>
         <span class="label label-default">POST</span>
 </p>
         <p><strong>请求参数</strong> <span class="badge">application/x-www-form-urlencoded</span></p>
@@ -78,20 +77,19 @@
                     <tr>
                         <td>username</td>
                         <td>string</td>
-                        <td>否</td>
+                        <td>是</td>
                         <td>用户名</td>
                     </tr>
                     <tr>
                         <td>password</td>
                         <td>string</td>
-                        <td>否</td>
+                        <td>是</td>
                         <td>密码</td>
                     </tr>
         </table>
     <p><strong>返回结果</strong></p>
     <pre class="prettyprint lang-json">{
-	"flag":"boolean //是否成功",
-	"code":"int //返回码",
+	"code":"int //是否成功 0成功 -1失败",
 	"message":"string //返回消息",
 	"data":{}
 }</pre>

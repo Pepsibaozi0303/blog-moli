@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>blog_service</module>
-        <module>blog_web</module>
         <module>blog_common</module>
     </modules>
 

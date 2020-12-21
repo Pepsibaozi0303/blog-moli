@@ -28,6 +28,12 @@
             <version>1.2.51</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.yedaxia</groupId>
+            <artifactId>japidocs</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+
         <!--通用mapper起步依赖-->
         <dependency>
             <groupId>tk.mybatis</groupId>
@@ -44,6 +50,12 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>top.touchface</groupId>
+            <artifactId>md2x</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 

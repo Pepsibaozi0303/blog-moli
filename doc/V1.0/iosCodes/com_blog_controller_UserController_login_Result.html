@@ -13,9 +13,7 @@
 
 @interface Result : NSObject
 
-//是否成功
-@property (nonatomic, strong) BOOL flag;
-//返回码
+//是否成功 0成功 -1失败
 @property (nonatomic, strong) NSInteger code;
 //返回消息
 @property (nonatomic, assign) NSString message;

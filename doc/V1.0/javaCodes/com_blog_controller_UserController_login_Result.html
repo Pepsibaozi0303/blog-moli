@@ -10,18 +10,9 @@
 <pre class="prettyprint lang-java">
 public class Result implements Serializable{
 
-    private boolean flag; //是否成功
-    private int code; //返回码
+    private int code; //是否成功 0成功 -1失败
     private String message; //返回消息
     private Object data; //返回数据
-
-    public boolean getFlag(){
-        return flag;
-    }
-
-    public void setFlag(boolean flag){
-        this.flag = flag;
-    }
 
     public int getCode(){
         return code;

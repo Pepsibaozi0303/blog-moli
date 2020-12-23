@@ -26,11 +26,12 @@ public class Md2xParseUtil {
         if (title == null) {
             mdStr.put("title", Arrays.asList("博客"));
         } else {
-            mdStr.put("title", Arrays.asList(title));
+            int titleLen = title.length();
+            String content = mdInfo.substring(titleLen);
+            mdStr.put("content", Arrays.asList(content));
+            mdStr.put("title", Arrays.asList(title.substring(2)));
         }
-        int titleLen = title.length();
-        String content = mdInfo.substring(titleLen);
-        mdStr.put("content", Arrays.asList(content));
+
     }
 
 

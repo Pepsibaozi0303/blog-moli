@@ -1,4 +1,10 @@
-## **mysql  windows版本安装（建议5.7版本，较稳定）**
+# mysql  windows版本安装（建议5.7版本，较稳定）
+
+```中文
+windows版本安装（建议5.7版本，较稳定）
+```
+
+
 
 #### 1.下载地址：https://downloads.mysql.com/archives/community/
 
@@ -11,8 +17,6 @@
 win10：此电脑右击 -> 高级系统设置 -> 环境变量，系统变量找到path，编辑->新建，然后找到安装目录mysql中的bin文件目录（我的：D:\development\mysql-5.7.31-winx64\bin），点击确定；
 
 #### 4.进入dos命令窗口，切换到mysql中的bin文件目录下，输入命令mysqld --initialize-insecure --user=mysql，生成data文件夹
-
-![](D:\teach\2.jpg
 
 ![](D:\teach\mysql安装\2.jpg)
 
@@ -31,4 +35,8 @@ win10：此电脑右击 -> 高级系统设置 -> 环境变量，系统变量找�
 使用：mysql -u root -p 登录
 
 set password for root@localhost = password('要修改的密码'); 修改密码
+
+```
+法师的发胜多负少
+```
 

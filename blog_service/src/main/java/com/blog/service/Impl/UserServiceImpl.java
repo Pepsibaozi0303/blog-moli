@@ -22,7 +22,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(User user) {
-
     }
 
     @Override
@@ -30,4 +29,10 @@ public class UserServiceImpl implements UserService {
         String userId = userDao.selectByUserName(userName);
         return userId;
     }
+
+    public String show(){
+        System.out.println("aaaaa");
+        return "aaaaa";
+    }
+
 }

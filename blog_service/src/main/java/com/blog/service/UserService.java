@@ -14,4 +14,6 @@ public interface UserService {
 
     String selectByUserName(String userName);
 
+    String show();
+
 }

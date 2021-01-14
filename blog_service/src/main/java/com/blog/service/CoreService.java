@@ -19,4 +19,7 @@ public interface CoreService {
 
     //查看首页博文
     List<Articles> homePage();
+
+    //查看博文
+    Articles microBlog(String article_id);
 }

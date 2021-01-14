@@ -38,6 +38,7 @@ public class MdServiceImpl implements MdService {
         Map<String, List<String>> strMap = Md2xParseUtil.parse(file);
         String title = strMap.get("title").get(0);
         String content = strMap.get("content").get(0);
+        String perfaceStr = strMap.get("perfaceStr").get(0);
         long currentTimeMillis = System.currentTimeMillis();
         Articles articles = new Articles();
         try {
@@ -49,6 +50,7 @@ public class MdServiceImpl implements MdService {
             articles.setArticle_views(0);
             articles.setArticle_comment_count(0);
             articles.setArticle_like_count(0);
+            articles.setArticle_introduction(perfaceStr);
             mdDao.insertSelective(articles);
         } catch (Exception e) {
             e.printStackTrace();

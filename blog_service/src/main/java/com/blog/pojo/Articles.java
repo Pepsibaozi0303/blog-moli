@@ -20,6 +20,8 @@ public class Articles implements Serializable {
     private Integer article_comment_count;  //评论总数
     private Date article_date;  //发表时间
     private Integer article_like_count;  //点心数（喜欢数）
+    private Integer is_delete;  //物理删除
+    private String article_introduction;  //博文前言
 
     public String getArticle_id() {
         return article_id;
@@ -83,5 +85,21 @@ public class Articles implements Serializable {
 
     public void setArticle_like_count(Integer article_like_count) {
         this.article_like_count = article_like_count;
+    }
+
+    public Integer getIs_delete() {
+        return is_delete;
+    }
+
+    public void setIs_delete(Integer is_delete) {
+        this.is_delete = is_delete;
+    }
+
+    public String getArticle_introduction() {
+        return article_introduction;
+    }
+
+    public void setArticle_introduction(String article_introduction) {
+        this.article_introduction = article_introduction;
     }
 }

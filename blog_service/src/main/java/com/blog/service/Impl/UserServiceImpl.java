@@ -1,5 +1,6 @@
 package com.blog.service.Impl;
 
+import com.blog.dao.CoreDao;
 import com.blog.dao.UserDao;
 import com.blog.pojo.User;
 import com.blog.service.UserService;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(User user) {
+        userDao.insert(user);
     }
 
     @Override

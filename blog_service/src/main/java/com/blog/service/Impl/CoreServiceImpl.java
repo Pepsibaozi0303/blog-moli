@@ -34,4 +34,11 @@ public class CoreServiceImpl implements CoreService {
         List<Articles> articles = coreDao.selectHotArticle();
         return articles;
     }
+
+    @Override
+    public Articles microBlog(String article_id){
+        Articles articles = coreDao.selectByPrimaryKey(article_id);
+        articles.setArticle_views(articles.getArticle_views()+1);
+        return articles;
+    }
 }

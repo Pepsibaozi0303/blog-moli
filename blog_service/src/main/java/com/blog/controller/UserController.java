@@ -22,6 +22,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     /**
      * 登录
      * @param username 用户名
@@ -46,4 +47,16 @@ public class UserController {
     }
 
 
+
+
+    @PostMapping("/register")
+    public Result register(@RequestParam(required = true) User user){
+        try {
+            userService.register(user);
+            return new Result(StatusCode.OK,"注册成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(StatusCode.ERROR,"注册失败");
+        }
+    }
 }

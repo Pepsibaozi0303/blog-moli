@@ -5,9 +5,7 @@ import com.blog.entity.StatusCode;
 import com.blog.pojo.Articles;
 import com.blog.service.CoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +31,23 @@ public class CoreController {
     public Result homePage(){
         try {
             List<Articles> articles = coreService.homePage();
+            return new Result(StatusCode.OK,"热门博文查询成功",articles);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(StatusCode.ERROR,"后台异常");
+        }
+
+    }
+
+    /**
+     *博文的浏览量
+     * @param article_id 博文id
+     * @return
+     */
+    @PostMapping("/views/{article_id}")
+    public Result microBlog(@PathVariable(required = true) String article_id){
+        try {
+            Articles articles = coreService.microBlog(article_id);
             return new Result(StatusCode.OK,"热门博文查询成功",articles);
         } catch (Exception e) {
             e.printStackTrace();

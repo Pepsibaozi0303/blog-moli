@@ -1,45 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="WARN" monitorInterval="60" packages="com.blog">
     <properties>
         <property name="LOG_PATH" value="logs" />
     </properties>
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT" follow="true">
-            <PatternLayout
-                    pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%M][%file:%line] - %msg%n" />
-        </Console>
-
-        <RollingRandomAccessFile name="systemLogAppender"
-                                 fileName="${LOG_PATH}/blog.log"
-                                 filePattern="${LOG_PATH}/${date:yyyy-MM}/blog.system-%d{MM-dd-yyyy}-%i.log.gz">
+        <RollingRandomAccessFile name="blogAppender"
+                                 fileName="${LOG_PATH}/blog-access.log"
+                                 filePattern="${LOG_PATH}/${date:yyyy-MM}/blog-access-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout>
                 <Pattern>%d %p [%t][%M][%file:%line] - %m%n</Pattern>
             </PatternLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="100 MB" />
+                <SizeBasedTriggeringPolicy size="500 MB" />
             </Policies>
-            <DefaultRolloverStrategy max="10" />
+            <DefaultRolloverStrategy max="30" />
         </RollingRandomAccessFile>
 
-
     </Appenders>
+
+
     <Loggers>
 
-        <logger name="com.blog.service" level="ERROR" additivity="false">
-            <AppenderRef ref="systemLogAppender" />
-        </logger>
+        <AsyncLogger name="com.blog.service"
+                     level="info" additivity="false">
+            <AppenderRef ref="blogAppender" />
+        </AsyncLogger>
 
-        <logger name="com.blog.service" level="INFO" additivity="false">
-            <AppenderRef ref="systemLogAppender" />
-        </logger>
-
-        <logger name="com.blog.service" level="debug" additivity="false">
-            <AppenderRef ref="systemLogAppender" />
-        </logger>
-
-        <Root level="ERROR">
-            <AppenderRef ref="Console" />
-        </Root>
+        <AsyncRoot level="info">
+            <!-- 			<AppenderRef ref="Console" /> -->
+            <AppenderRef ref="blogAppender" />
+        </AsyncRoot>
     </Loggers>
 </Configuration>

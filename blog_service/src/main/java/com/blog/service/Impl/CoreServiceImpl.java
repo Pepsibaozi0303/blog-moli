@@ -3,6 +3,8 @@ package com.blog.service.Impl;
 import com.blog.dao.CoreDao;
 import com.blog.pojo.Articles;
 import com.blog.service.CoreService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ import java.util.List;
  */
 @Service
 public class CoreServiceImpl implements CoreService {
+    private static final Logger logger = LoggerFactory.getLogger(CoreServiceImpl.class);
 
     @Autowired
     private CoreDao coreDao;

@@ -45,6 +45,9 @@
                     <a class="catalog-item" href="com_blog_controller_CoreController.html#homePage">
                         查询热门信息（首页使用）
                     </a>
+                    <a class="catalog-item" href="com_blog_controller_CoreController.html#microBlog">
+                        查看博文
+                    </a>
             </div>
         </div>
         <div class="panel">
@@ -66,6 +69,9 @@
             <div id="collapse2" class="collapse in " aria-labelledby="heading2">
                     <a class="catalog-item" href="com_blog_controller_UserController.html#login">
                         登录
+                    </a>
+                    <a class="catalog-item" href="com_blog_controller_UserController.html#register">
+                        register
                     </a>
             </div>
         </div>
@@ -124,6 +130,28 @@
         </div>
                         </div>
                         <hr>
+                        <div class="action-item">
+<h2 id="register"><a href="#">register </a></h2>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/register</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int //是否成功 0成功 -1失败",
+	"message":"string //返回消息",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_blog_controller_UserController_register_Result.html"><i
+                        class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_blog_controller_UserController_register_Result.html"><i class="fa fa-apple"
+                                                                                                 aria-hidden="true"></i>
+                iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -138,8 +166,10 @@
 
     var search_source_data = [
             {name: '核心功能.查询热门信息（首页使用）', url: 'com_blog_controller_CoreController.html#homePage'},
+            {name: '核心功能.查看博文', url: 'com_blog_controller_CoreController.html#microBlog'},
             {name: 'md文件解析接口.md文件上传，发文', url: 'com_blog_controller_MdController.html#upload'},
             {name: '用户接口.登录', url: 'com_blog_controller_UserController.html#login'},
+            {name: '用户接口.register', url: 'com_blog_controller_UserController.html#register'},
     ];
 
 

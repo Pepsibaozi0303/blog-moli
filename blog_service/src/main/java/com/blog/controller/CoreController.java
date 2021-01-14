@@ -40,11 +40,11 @@ public class CoreController {
     }
 
     /**
-     *博文的浏览量
+     *查看博文
      * @param article_id 博文id
      * @return
      */
-    @PostMapping("/views/{article_id}")
+    @GetMapping("/views/{article_id}")
     public Result microBlog(@PathVariable(required = true) String article_id){
         try {
             Articles articles = coreService.microBlog(article_id);

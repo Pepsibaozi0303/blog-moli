@@ -1,6 +1,7 @@
 package com.blog.service;
 
 import com.blog.pojo.Articles;
+import com.blog.pojo.Sorts;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -22,4 +23,7 @@ public interface CoreService {
 
     //查看博文
     Articles microBlog(String article_id);
+
+    //分类展示
+    List<Sorts> sorts();
 }

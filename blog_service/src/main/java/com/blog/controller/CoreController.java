@@ -3,6 +3,7 @@ package com.blog.controller;
 import com.blog.entity.Result;
 import com.blog.entity.StatusCode;
 import com.blog.pojo.Articles;
+import com.blog.pojo.Sorts;
 import com.blog.service.CoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -53,6 +54,19 @@ public class CoreController {
             e.printStackTrace();
             return new Result(StatusCode.ERROR,"后台异常");
         }
+    }
 
+    /**
+     * 查看博文分类信息
+     * @return
+     */
+    public Result sorts(){
+        try {
+            List<Sorts> sorts = coreService.sorts();
+            return new Result(StatusCode.OK,"查询博文分类成功",sorts);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(StatusCode.ERROR,"后台异常");
+        }
     }
 }
